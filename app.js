@@ -1,20 +1,21 @@
 // dependencies
 const ethers = require('ethers');
+require('dotenv').config();
 
 // addresses we will use, some of these could/should be moved to an .env file
 const addresses = {
 	wBNB: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
 	factory:'0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
 	router:'0x10ED43C718714eb63d5aA57B78B54704E256024E',
-	wallet:'0x140a3080C7C4EA2ede4F72443a5B564cd4366918' // Firefox Metamask - Acct. 2
+	wallet: process.env.address // Firefox Metamask - Acct. 2
 }
 
 // this address should have enough BNB to pay for the fees
-const mnemonic = 'step kingdom milk shiver barrel autumn acquire blossom chunk comfort call swing';
+const mnemonic = process.env.mnemonic;
 // websocket provider
 // const conn = new WebSocket("wss://dex.binance.org/api/");
 
-const provider = new ethers.providers.WebSocketProvider('wss://dex.binance.org/api/');
+const provider = new ethers.providers.WebSocketProvider(`wss://bsc.getblock.io/testnet/?api_key=${apiKey}`)
 const wallet = ethers.Wallet.fromMnemonic(mnemonic);
 const account = wallet.connect(provider);
 

@@ -1,7 +1,6 @@
 // import dependencies
 const ethers = require('ethers')
 require('dotenv').config();
-// const prompt = require('prompt-sync')({ sigint: true })
 
 // API info
 const apiKey = process.env.API_KEY
