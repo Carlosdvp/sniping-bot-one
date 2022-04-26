@@ -10,12 +10,14 @@ const addresses = {
 	wallet: process.env.address // Firefox Metamask - Acct. 2
 }
 
+// API info
+const apiKey = process.env.API_KEY
 // this address should have enough BNB to pay for the fees
 const mnemonic = process.env.mnemonic;
-// websocket provider
-// const conn = new WebSocket("wss://dex.binance.org/api/");
 
-const provider = new ethers.providers.WebSocketProvider(`wss://bsc.getblock.io/testnet/?api_key=${apiKey}`)
+//
+// websocket provider - BSC Mainnet
+const provider = new ethers.providers.WebSocketProvider(`wss://bsc.getblock.io/mainnet/?api_key=${apiKey}`)
 const wallet = ethers.Wallet.fromMnemonic(mnemonic);
 const account = wallet.connect(provider);
 

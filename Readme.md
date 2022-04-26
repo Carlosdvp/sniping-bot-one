@@ -30,3 +30,14 @@ https://github.com/jklepatch/eattheblocks/blob/master/screencast/348-pancakeswap
 - made some edits based on another, similar project: How to Snipe BSC Token Launches
   - added a watcher bot just to make sure all the pieces are working
   - moved sensitive info to a .env file
+
+
+-------------------------------------------------------
+
+## Contents
+
+- app.js
+  - main sniper bot code
+
+- watcherBot.js
+  - simply watches for the PairCreated event
